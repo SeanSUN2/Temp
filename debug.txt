@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 生成输入数组
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+# 计算FFT
+fft_result = np.fft.fft(y)
+
+# 计算频率
+freq = np.fft.fftfreq(len(y))
+
+# 绘制结果
+plt.plot(freq, np.abs(fft_result))
+plt.xlabel('Frequency')
+plt.ylabel('Amplitude')
+plt.title('FFT of the input array')
+plt.show()
